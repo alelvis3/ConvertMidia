@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.alelvis3br</groupId>
+  <artifactId>ConvertMidia</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>ConvertMidia</name>
+  <description>Converte mídias de MP4 para MP3</description>
+  
+      <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+  
+    <dependencies>
+        <!-- Swing Layout Manager (MigLayout) -->
+        <dependency>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout-swing</artifactId>
+            <version>5.2</version>
+        </dependency>
+
+        <!-- Logging (SLF4J) -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+
+        <!-- JAVE (Java Audio Video Encoder) - Pode ser uma alternativa ao uso direto do FFmpeg -->
+        <!-- Se você optar por JAVE, comente a dependência do FFmpeg helper -->
+         <dependency>
+             <groupId>ws.schild</groupId>
+             <artifactId>jave-core</artifactId>
+             <version>3.5.0</version>
+         </dependency>
+         <dependency>
+             <groupId>ws.schild</groupId>
+             <artifactId>jave-nativebin-win64</artifactId>
+             <version>3.5.0</version>
+         </dependency>
+         <dependency>
+             <groupId>ws.schild</groupId>
+             <artifactId>jave-nativebin-linux64</artifactId>
+             <version>3.5.0</version>
+         </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
