@@ -94,5 +94,4 @@ public class ConverterModel {
 			this.conversionRunning = false;
 		}
 	}
-
 }
